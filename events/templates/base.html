@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    {% if request.user.is_authenticated %}
+    <p>You are logged in with - {{request.user.get_full_name}}</p>
+    <a href="/logout">Logout</a>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    {% block below_footer %}
+    {% endblock %}
+</body>
+</html>

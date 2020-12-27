@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <p>Name: {{request.user.get_full_name}}</p>
+
+	{% if products %}
+    <p>Events Conducted by you</p>
+    <table>
+		<tr>
+			<th>Product Name</th>
+			<th>Product Price</th>
+		</tr>
+	{% for event in events %}
+	<tr>
+		<td>{{event.Eventname}}</td>
+		<td>{{event.body}}</td>
+	</tr>
+    {% endfor %}
+	</table>
+	{% else %} 
+		<p>You have not added any product</p>
+	{% endif %}
+
+    
+{% endblock content %}
+    

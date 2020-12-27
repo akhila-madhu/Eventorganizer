@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <img src="/media/{{event.thumbnail}}" alt="">
+       <div>{{event.Eventname}}</div>
+       <div>{{event.category}}</div>
+       <div>{{event.Name}}</div>
+       <div>{{event.body}}</div>
+       <div>{{event.venue}}</div>
+       <div>{{event.DateAndTime}}</div>
+       <div>{{event.TotalAvailableSeats}}</div>
+    <a href="{% url 'update_event' event.id %}"><button>Update</button></a>
+    <a href="http://127.0.0.1:8000/Eventlist"><button>Back</button></a>
+    {% endblock content %}
